@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запрос имени</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        input {
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Как вас зовут?</h2>
+        <input type="text" id="nameInput" placeholder="Введите ваше имя">
+        <br>
+        <button onclick="showName()">Отправить</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function showName() {
+            const name = document.getElementById('nameInput').value;
+            const result = document.getElementById('result');
+            
+            if (name.trim() === '') {
+                result.textContent = 'Пожалуйста, введите ваше имя';
+                result.style.color = 'red';
+            } else {
+                result.textContent = `Привет, ${name}!`;
+                result.style.color = 'black';
+            }
+        }
+    </script>
+</body>
+</html>
